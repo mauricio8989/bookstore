@@ -7,7 +7,7 @@ from product.models.category import Category
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    categories = CategorySerializer(required=True, many=True)
+    categories = CategorySerializer(required=False, many=True)
     categories_id = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), write_only=True, many=True)
 
     class Meta:
