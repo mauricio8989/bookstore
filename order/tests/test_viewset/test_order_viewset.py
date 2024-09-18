@@ -5,7 +5,6 @@ from django.urls import reverse
 
 from product.factories import ProductFactory, CategoryFactory
 from order.factories import OrderFactory, UserFactory
-from product.models import Product
 from order.models import Order
 
 class TestOrderViewSet(APITestCase):
@@ -22,11 +21,19 @@ class TestOrderViewSet(APITestCase):
         )
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        order_data = json.loads(response.content)[0]
-        self.assertEqual(order_data['product'][0]['title'], self.product.title)
-        self.assertEqual(order_data['product'][0]['price'], self.product.price)
-        self.assertEqual(order_data['product'][0]['active'], self.product.active)
-        self.assertEqual(order_data['product'][0]['categories'][0]['title'], self.category.title)
+        
+        order_data = json.loads(response.content)
+        # Acesse os dados dentro da chave 'results'
+        results = order_data.get('results', [])
+        if len(results) > 0:
+            order_data = results[0]
+            self.assertEqual(order_data['product'][0]['title'], self.product.title)
+            self.assertEqual(order_data['product'][0]['price'], self.product.price)
+            self.assertEqual(order_data['product'][0]['active'], self.product.active)
+            self.assertEqual(order_data['product'][0]['categories'][0]['title'], self.category.title)
+        else:
+            self.fail("Response 'results' is empty")
+
 
     def test_create_order(self):
         user = UserFactory()
