@@ -30,22 +30,14 @@ files = [
 
 [[package]]
 name = "django"
-<<<<<<< HEAD
-version = "5.1"
-=======
 version = "5.1.1"
->>>>>>> viewsets
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 optional = false
 python-versions = ">=3.10"
 files = [
-<<<<<<< HEAD
-    {file = "Django-5.1-py3-none-any.whl", hash = "sha256:d3b811bf5371a26def053d7ee42a9df1267ef7622323fe70a601936725aa4557"},
-    {file = "Django-5.1.tar.gz", hash = "sha256:848a5980e8efb76eea70872fb0e4bc5e371619c70fffbe48e3e1b50b2c09455d"},
-=======
+
     {file = "Django-5.1.1-py3-none-any.whl", hash = "sha256:71603f27dac22a6533fb38d83072eea9ddb4017fead6f67f2562a40402d61c3f"},
     {file = "Django-5.1.1.tar.gz", hash = "sha256:021ffb7fdab3d2d388bc8c7c2434eb9c1f6f4d09e6119010bbb1694dda286bc2"},
->>>>>>> viewsets
 ]
 
 [package.dependencies]
@@ -58,8 +50,6 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "django-extensions"
 version = "3.2.3"
 description = "Extensions for Django"
@@ -87,7 +77,6 @@ files = [
 djangorestframework = "*"
 
 [[package]]
->>>>>>> viewsets
 name = "djangorestframework"
 version = "3.15.2"
 description = "Web APIs for Django, made easy."
@@ -116,8 +105,6 @@ files = [
 test = ["pytest (>=6)"]
 
 [[package]]
-<<<<<<< HEAD
-=======
 name = "factory-boy"
 version = "3.3.1"
 description = "A versatile test fixtures replacement based on thoughtbot's factory_bot for Ruby."
@@ -150,7 +137,6 @@ files = [
 python-dateutil = ">=2.4"
 
 [[package]]
->>>>>>> viewsets
 name = "iniconfig"
 version = "2.0.0"
 description = "brain-dead simple config-ini parsing"
@@ -210,8 +196,7 @@ tomli = {version = ">=1", markers = "python_version < \"3.11\""}
 dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
-<<<<<<< HEAD
-=======
+
 name = "pytest-django"
 version = "4.9.0"
 description = "A Django plugin for pytest."
@@ -255,7 +240,6 @@ files = [
 ]
 
 [[package]]
->>>>>>> viewsets
 name = "sqlparse"
 version = "0.5.1"
 description = "A non-validating SQL parser."
@@ -306,8 +290,5 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-<<<<<<< HEAD
-content-hash = "c1fc844a83305c0bfb60154b2aef4dffc2d754679940a0eed5f1c7cf84147c7b"
-=======
+
 content-hash = "2d9c0ccfeeabe1727cf00bab05009a7e10f9c28b7c93aaa45572f9981145ef57"
->>>>>>> viewsets
