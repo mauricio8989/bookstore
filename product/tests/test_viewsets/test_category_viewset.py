@@ -7,7 +7,7 @@ from product.factories import ProductFactory, CategoryFactory
 from order.factories import OrderFactory, UserFactory
 from product.models import Category
 
-class TestProductViewSet(APITestCase):
+class TestCategoryViewSet(APITestCase):
     client = APIClient()
 
     def setUp(self):
@@ -15,12 +15,12 @@ class TestProductViewSet(APITestCase):
 
     def test_get_all_categories(self):
         response = self.client.get(
-            reverse('category-list'), kwargs={'version': 'v1'}
+            reverse('category-list', args=['v1'])
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         category_data = json.loads(response.content)
 
-        self.assertEqual(category_data[0]['title'], self.category.title)
+        self.assertEqual(category_data['results'][0]['title'], self.category.title)
 
     def test_create_category(self):
         data = json.dumps({
@@ -28,7 +28,7 @@ class TestProductViewSet(APITestCase):
         })
 
         response = self.client.post(
-            reverse('category-list'), kwargs={'version': 'v1'},
+            reverse('category-list', args=['v1']),
             data=data,
             content_type='application/json',
         )
@@ -36,5 +36,4 @@ class TestProductViewSet(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         created_category = Category.objects.get(title='technology')
-
         self.assertEqual(created_category.title, 'technology')
