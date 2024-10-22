@@ -24,8 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-f*k@=53bc5!shef1-6w+m$-g)kspbaljz%8k4(j7iuc-u2_dyd"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-
+# DEBUG = True
 
 # Application definition
 
@@ -151,11 +150,9 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-DEBUG = int(os.environ.get("DEBUG", default=0))
 
-# 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
-# For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = ["localhost," "127.0.0.1", "mauricio7979.pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "mauricio7979.pythonanywhere.com"]
+
+DEBUG = int(os.environ.get("DEBUG", default=0))
 
