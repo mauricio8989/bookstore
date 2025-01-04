@@ -4,8 +4,8 @@ from rest_framework import routers
 from product import viewsets
 
 router = routers.SimpleRouter()
-router.register(r"product", viewsets.ProductViewSet, basename="product")
-router.register(r"category", viewsets.CategoryViewSet, basename="category")
+router.register("product", viewsets.ProductViewSet, basename="product")
+router.register("category", viewsets.CategoryViewSet, basename="category")
 
 
 urlpatterns = [
